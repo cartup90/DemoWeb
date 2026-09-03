@@ -1,376 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Restaurante con cocina de autor y platos caseros. Pedí por WhatsApp y recibí tu pedido en la puerta de tu casa.">
-    <title>Catriel estilo korea| Cocina Casera y de Autor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catriel estilo korea | Gastronomía</title>
+  <meta name="description" content="Catriel estilo korea — Gastronomía en Río Cuarto. Catriel estilo Korea es tu rincón gastronómico en Río Cuarto donde los sabores tradicionales de Corea cobran vida. Ubica">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#333;background:#fff;line-height:1.6}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
+  .hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:linear-gradient(135deg,#2A313E,#8C8788)}
+  .hero-bg{position:absolute;inset:0;object-fit:cover;opacity:.25;z-index:0}
+  .hero-content{position:relative;z-index:1;padding:60px 20px}
+  .hero h1{font-size:clamp(1.8rem,5vw,3.5rem);margin-bottom:10px}
+  .rubro-badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);padding:6px 18px;border-radius:50px;font-size:.9rem;margin-bottom:20px}
+  .hero .btn{display:inline-block;margin-top:24px;padding:14px 36px;background:#25D366;color:#fff;border-radius:50px;text-decoration:none;font-weight:600;transition:transform .2s;font-size:1.1rem}
+  .hero .btn:hover{transform:scale(1.05)}
+  .logo-img{height:50px;border-radius:50%;margin-right:12px;vertical-align:middle}
+  section{padding:60px 0}
+  section h2{font-size:1.8rem;margin-bottom:30px;color:#2A313E;display:inline-block}
+  section h2:after{content:'';display:block;width:60%;height:3px;background:#8C8788;margin-top:8px;border-radius:2px}
+  .about p{font-size:1.05rem;max-width:800px;margin:0 auto;color:#555}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;transition:transform .3s}
+  .gallery-grid img:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:20px}
+  .review-card{background:#f8f9fa;padding:24px;border-radius:16px;transition:box-shadow .3s}
+  .review-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+  .stars{color:#4F3636;font-size:1.2rem;letter-spacing:2px}
+  .review-text{font-style:italic;margin:8px 0;color:#555}
+  .hours-list{list-style:none;max-width:400px;margin:0 auto;padding:0;text-align:center}
+  .hours-list li{padding:8px 0;border-bottom:1px solid #eee;font-size:1rem}
+  .social-links{display:flex;gap:20px;justify-content:center;margin-top:16px}
+  .social-link{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;color:#fff;font-size:1.4rem;text-decoration:none;background:#8C8788;transition:transform .2s}
+  .social-link:hover{transform:scale(1.15)}
+  #map{height:400px;border-radius:16px;overflow:hidden}
+  .map-placeholder{text-align:center;padding:40px;background:#f8f8f8;border-radius:12px}
+  .wa-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.4);z-index:100;transition:transform .2s}
+  .wa-float:hover{transform:scale(1.1)}
+  footer{background:#2A313E;color:#fff;padding:40px 0;text-align:center;margin-top:40px}
+  footer a{color:#25D366}
+  @media(max-width:600px){.gallery-grid{grid-template-columns:1fr 1fr}.hero{min-height:60vh}}
+  </style>
 </head>
 <body>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20hacer%20un%20pedido." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Header / Navbar -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="#" class="logo">
-                <i class="fas fa-utensils"></i>
-                <span>Sabores <strong>del Barrio</strong></span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#menu">Menú</a></li>
-                <li><a href="#promos">Promos del Día</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#resenas">Reseñas</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-            </ul>
-            <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20hacer%20un%20pedido." class="btn btn-primary btn-nav" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i> Pedir Ahora
-            </a>
-            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="hero-badge"><i class="fas fa-fire"></i> Cocina a la vista + Delivery propio</span>
-            <h1>Cocina que se siente <span class="highlight">como en casa</span></h1>
-            <p>Platos caseros con ingredientes frescos de la zona, recetas de la abuela y un toque de autor. Pedí por WhatsApp y te lo llevamos calentito a tu puerta.</p>
-            <div class="hero-actions">
-                <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20ver%20el%20menu%20y%20hacer%20un%20pedido." class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-                </a>
-                <a href="#menu" class="btn btn-outline btn-lg">Ver Menú</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><strong>4.9★</strong><span>+500 reseñas</span></div>
-                <div class="stat"><strong>40min</strong><span>promedio de entrega</span></div>
-                <div class="stat"><strong>100%</strong><span>casero y fresco</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Propuesta de Valor / Beneficios -->
-    <section id="beneficios" class="beneficios">
-        <div class="container">
-            <h2 class="section-title">El sabor que <span>hace la diferencia</span></h2>
-            <p class="section-subtitle">Tres razones por las que nuestros clientes vuelven todos los días.</p>
-            <div class="beneficios-grid">
-                <div class="beneficio-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Fresco Todos los Días</h3>
-                    <p>Compramos verduras y carnes cada mañana. Nada congelado, nada de hace 3 días. La frescura se siente en cada bocado.</p>
-                </div>
-                <div class="beneficio-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Delivery Rápido</h3>
-                    <p>Flota propia de repartidores que llegan en promedio en 40 minutos. Tu comida llega caliente y en perfecto estado.</p>
-                </div>
-                <div class="beneficio-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>Recetas de Familia</h3>
-                    <p>Platos que pasan de generación en generación, con el toque personal de nuestros cocineros expertos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menú / Catálogo Interactivo -->
-    <section id="menu" class="menu">
-        <div class="container">
-            <h2 class="section-title">Nuestro <span>Menú</span></h2>
-            <p class="section-subtitle">Elegí tu favorito y pedilo directo por WhatsApp. ¿Dudas? Te asesoramos.</p>
-
-            <div class="menu-tabs">
-                <button class="menu-tab active" data-filter="todos">Todos</button>
-                <button class="menu-tab" data-filter="platos">Platos Principales</button>
-                <button class="menu-tab" data-filter="minutas">Minutas</button>
-                <button class="menu-tab" data-filter="postres">Postres</button>
-            </div>
-
-            <div class="menu-grid">
-                <div class="menu-item" data-categoria="platos">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80');"></div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>Risotto de Hongos</h3>
-                            <span class="price">$12.500</span>
-                        </div>
-                        <p>Arroz cremoso con mix de hongos salteados, queso parmesano y reducción de vino tinto.</p>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20el%20Risotto%20de%20Hongos." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Pedir
-                        </a>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-categoria="minutas">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80');"></div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>Milanesa Napolitana</h3>
-                            <span class="price">$9.800</span>
-                        </div>
-                        <p>Milanesa de ternera con salsa de tomate casera, muzzarella derretida y papas fritas.</p>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20la%20Milanesa%20Napolitana." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Pedir
-                        </a>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-categoria="platos">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80');"></div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>Salmón con Ajo</h3>
-                            <span class="price">$15.200</span>
-                        </div>
-                        <p>Salmón rosado sellado, salsa de ajo y queso, guarnición de vegetales asados al carbón.</p>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20el%20Salmon%20con%20Ajo." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Pedir
-                        </a>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-categoria="postres">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80');"></div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>Chocolate Beauty</h3>
-                            <span class="price">$6.500</span>
-                        </div>
-                        <p>Torta de chocolate con interior de dulce de leche, acompañada de helado artesanal.</p>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20el%20Chocolate%20Beauty." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Pedir
-                        </a>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-categoria="platos">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=600&q=80');"></div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>Tapa a la Pizza</h3>
-                            <span class="price">$14.500</span>
-                        </div>
-                        <p>Bife de tapa con orégano, hongos salteados y papas fritas. Un clásico argentino mejorado.</p>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20la%20Tapa%20a%20la%20Pizza." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Pedir
-                        </a>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-categoria="minutas">
-                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=600&q=80');"></div>
-                    <div class="menu-info">
-                        <div class="menu-header">
-                            <h3>Picada para Compartir</h3>
-                            <span class="price">$11.900</span>
-                        </div>
-                        <p>Tabla para compartir: criollos, queso, bondiola, salame, huevo y aceitunas. ¡Rinde para dos!</p>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20la%20Picada." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Pedir
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promociones del Día -->
-    <section id="promos" class="promos">
-        <div class="container">
-            <h2 class="section-title">Promos del <span>Día</span></h2>
-            <div class="promos-grid">
-                <div class="promo-card">
-                    <div class="promo-badge">-20%</div>
-                    <i class="fas fa-pizza-slice"></i>
-                    <h3>Martes de Pizza</h3>
-                    <p>2 pizzas medianas + 1 gaseosa a $15.800. Válido hasta 23hs.</p>
-                    <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20aprovechar%20la%20promo%20de%20Martes%20de%20Pizza." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> Aprovechar Promo
-                    </a>
-                </div>
-                <div class="promo-card">
-                    <div class="promo-badge">2x1</div>
-                    <i class="fas fa-hamburger"></i>
-                    <h3>Jueves de Burgers</h3>
-                    <p>2 hamburguesas caseras con papas acordeón por $13.900. Ideal para compartir.</p>
-                    <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20aprovechar%20la%20promo%20de%20Jueves%20de%20Burgers." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> Aprovechar Promo
-                    </a>
-                </div>
-                <div class="promo-card">
-                    <div class="promo-badge">Gratis</div>
-                    <i class="fas fa-wine-glass"></i>
-                    <h3>Domingos de Picada</h3>
-                    <p>Comprá 1 picada grande y llevá una copa de vino de cortesía. Ideal para la sobremesa.</p>
-                    <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20aprovechar%20la%20promo%20de%20Domingos%20de%20Picada." class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> Aprovechar Promo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería -->
-    <section id="galeria" class="galeria">
-        <div class="container">
-            <h2 class="section-title">Galería de <span>Sabores</span></h2>
-            <p class="section-subtitle">Un vistazo de lo que te espera. ¿Se te antojó? Pedí ahora por WhatsApp.</p>
-            <div class="galeria-grid">
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80');"></div>
-                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80');"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Prueba Social / Reseñas -->
-    <section id="resenas" class="resenas">
-        <div class="container">
-            <h2 class="section-title">Lo que dicen <span>nuestros comensales</span></h2>
-            <div class="resenas-grid">
-                <div class="resena-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"El risotto de hongos es EL MEJOR que probé en el barrio. Precios razonables y el delivery llega siempre caliente. ¡Súper recomendado!"</p>
-                    <div class="resena-author">
-                        <i class="fas fa-user-circle"></i>
-                        <div><strong>María F.</strong><span>Google Reviews</span></div>
-                    </div>
-                </div>
-                <div class="resena-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Pedimos por WhatsApp a las 20h y a las 20:40 ya estábamos comiendo. Todo venía caliente, las milanesas crujientes y porciones gigantes."</p>
-                    <div class="resena-author">
-                        <i class="fas fa-user-circle"></i>
-                        <div><strong>Javier P.</strong><span>Google Reviews</span></div>
-                    </div>
-                </div>
-                <div class="resena-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"El domingo fui a comer con mi familia: la picada rindió para cuatro y la torta de chocolate es algo increíble. Atención de 10."</p>
-                    <div class="resena-author">
-                        <i class="fas fa-user-circle"></i>
-                        <div><strong>Laura y Diego</strong><span>Google Reviews</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ubicación y Horarios -->
-    <section id="ubicacion" class="ubicacion">
-        <div class="container">
-            <h2 class="section-title">Vení a <span>visitarnos</span></h2>
-            <div class="ubicacion-grid">
-                <div class="informacion">
-                    <h3><i class="fas fa-clock"></i> Horarios</h3>
-                    <ul class="horario-lista">
-                        <li><span>Lunes a Jueves</span><strong>12:00 - 15:00 / 20:00 - 00:00</strong></li>
-                        <li><span>Viernes y Sábados</span><strong>12:00 - 16:00 / 20:00 - 01:00</strong></li>
-                        <li><span>Domingos</span><strong>11:30 - 16:00</strong></li>
-                    </ul>
-                    <div class="direccion">
-                        <i class="fas fa-location-dot"></i>
-                        <p>Av. Corrientes 1234,<br>Ciudad de Buenos Aires</p>
-                    </div>
-                    <div class="contacto-rapido">
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20reservar%20una%20mesa." class="btn btn-primary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i> Reservar Mesa
-                        </a>
-                        <a href="https://wa.me/5493584180337?text=Hola!%20Quiero%20pedir%20a%20domicilio." class="btn btn-outline-dark" target="_blank" rel="noopener">
-                            <i class="fas fa-motorcycle"></i> Delivery
-                        </a>
-                    </div>
-                </div>
-                <div class="mapa">
-                    <iframe src="https://www.google.com/maps?q=Av.%20Corrientes%201234%2C%20Ciudad%20de%20Buenos%20Aires&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo"><i class="fas fa-utensils"></i> Sabores <strong>del Barrio</strong></a>
-                <p>Cocina casera y de autor con corazón de barrio. Pedidos por WhatsApp, delivery propio y atención de cercanía.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navegación</h4>
-                <ul>
-                    <li><a href="#menu">Menú</a></li>
-                    <li><a href="#promos">Promos</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#ubicacion">Ubicación</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Seguinos</h4>
-                <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Catriel estilo korea. Todos los derechos reservados.</p>
-            <p>Desarrollado con <i class="fas fa-heart"></i> para comercios locales.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', function () {
-                const isOpen = navLinks.classList.toggle('active');
-                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-            });
-
-            navLinks.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    navLinks.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    menuToggle.setAttribute('aria-label', 'Abrir menú');
-                });
-            });
-        }
-
-        // Menu filter (tabs)
-        const tabs = document.querySelectorAll('.menu-tab');
-        const items = document.querySelectorAll('.menu-item');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                tabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.dataset.filter;
-                items.forEach(item => {
-                    if (filter === 'todos' || item.dataset.categoria === filter) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+<a href="https://wa.me/5493584180337" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<section class="hero">
+  <img src="https://picsum.photos/seed/hero-gastronomia/1600/900" alt="" class="hero-bg" aria-hidden="true">
+  <div class="hero-content">
+    <div style="margin-bottom:16px"><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk-y4MeNmXr4wmdFWp3rSHydrPHq2fj8Wt9DcDbWJH6LXxTJl7nc8ga-_idVsxTQ8Qql9sKO8djiswRmPBO-NMMKQDCqg-yMV_tp9FlvZroNWPcDJCyJ23xFGpJHTpaGvCN6XtJgA=w408-h725-k-no" alt="Catriel estilo korea" class="logo-img"></div>
+    <span class="rubro-badge"><i class="fas fa-tag"></i> Gastronomía</span>
+    <h1>Catriel estilo korea</h1>
+    <p style="font-size:1.1rem;max-width:600px;margin:12px auto;opacity:.9">📍 Alvear 757, X5800 Río Cuarto, Córdoba</p>
+    <a href="https://wa.me/5493584180337" target="_blank" rel="noopener" class="btn"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+  </div>
+</section>
+<section class="about container">
+  <h2>Sobre nosotros</h2>
+  <div style="text-align:center">Catriel estilo Korea es tu rincón gastronómico en Río Cuarto donde los sabores tradicionales de Corea cobran vida. Ubicado en Alvear 757, nuestro local te ofrece una experiencia culinaria única, con platos auténticos preparados con ingredientes frescos y técnicas tradicionales. Desde el clásico bibimbap hasta los irresistibles kimchi, cada bocado te transportará directamente a las calles de Seúl. Nuestro equipo está comprometido a brindarte un servicio cálido y atento, asegurando que tu visita sea memorable. ¡Ven y descubre el verdadero sabor de Corea en el corazón de Córdoba!</div>
+</section>
+<section class="container">
+  <h2>Galería</h2>
+  <div class="gallery-grid"><img src="https://picsum.photos/seed/gastronomia-demo-1/800/600" alt="Foto 1" class="gal-img" loading="lazy"><img src="https://picsum.photos/seed/gastronomia-demo-2/800/600" alt="Foto 2" class="gal-img" loading="lazy"><img src="https://picsum.photos/seed/gastronomia-demo-3/800/600" alt="Foto 3" class="gal-img" loading="lazy"><img src="https://picsum.photos/seed/gastronomia-demo-4/800/600" alt="Foto 4" class="gal-img" loading="lazy"><img src="https://picsum.photos/seed/gastronomia-demo-5/800/600" alt="Foto 5" class="gal-img" loading="lazy"><img src="https://picsum.photos/seed/gastronomia-demo-6/800/600" alt="Foto 6" class="gal-img" loading="lazy"></div>
+</section>
+<section style="background:#f8f9fa">
+  <div class="container">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="reviews-grid">
+<section class="review-card">
+  <div class="stars">★★★★★</div>
+  <p class="review-text">"¡Una experiencia increíble! Los sabores son auténticos y el ambiente es muy acogedor. ¡Volveré seguro!"</p>
+  <strong>— María Gómez</strong>
+</section>
+<section class="review-card">
+  <div class="stars">★★★★★</div>
+  <p class="review-text">"El bibimbap estaba delicioso, y el servicio fue impecable. Recomiendo totalmente este lugar."</p>
+  <strong>— Juan Pérez</strong>
+</section>
+<section class="review-card">
+  <div class="stars">★★★★☆</div>
+  <p class="review-text">"Me encantó la atención y la comida es de alta calidad. Un lugar que no pueden perder."</p>
+  <strong>— Lucía Fernández</strong>
+</section></div>
+  </div>
+</section>
+<section class="container" style="text-align:center">
+  <h2>Horarios</h2>
+  <ul class="hours-list"><li>Lunes: 12:00 – 15:00, 19:00 – 23:00</li><li>Martes: 12:00 – 15:00, 19:00 – 23:00</li><li>Miércoles: 12:00 – 15:00, 19:00 – 23:00</li><li>Jueves: 12:00 – 15:00, 19:00 – 23:00</li><li>Viernes: 12:00 – 15:00, 19:00 – 23:00</li><li>Sábados: 12:00 – 15:00, 19:00 – 23:00</li></ul>
+</section>
+<section style="background:#f8f9fa;text-align:center">
+  <div class="container">
+    <h2>Seguinos en redes</h2>
+    <div class="social-links"><a href="https://instagram.com/catrielestilokorea" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://facebook.com/Catriel%20Estilo%20Korea" target="_blank" rel="noopener" class="social-link"><i class="fab fa-facebook"></i></a></div>
+  </div>
+</section>
+<section class="container">
+  <h2>Ubicación</h2>
+  <div id="map"><div class="map-placeholder"><a href="https://www.openstreetmap.org/search?query=Alvear%20757%2C%20X5800%20R%C3%ADo%20Cuarto%2C%20C%C3%B3rdoba" target="_blank" style="color:#8C8788">📍 Ver en OpenStreetMap</a></div></div>
+</section>
+<footer>
+  <div class="container">
+    <p>Catriel estilo korea — Gastronomía</p>
+    <p style="font-size:.85rem;opacity:.7">📍 Alvear 757, X5800 Río Cuarto, Córdoba &nbsp;|&nbsp; 📞 <a href="https://wa.me/5493584180337">0358 418-0337</a></p>
+    <p style="font-size:.8rem;opacity:.5;margin-top:16px">Demo generada automáticamente</p>
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(async function(){var a="Alvear%20757%2C%20X5800%20R%C3%ADo%20Cuarto%2C%20C%C3%B3rdoba";if(!a)return;try{var r=await fetch('https://nominatim.openstreetmap.org/search?format=json&q='+a,{headers:{"User-Agent":"bot-prospectos/1.0"}}),d=await r.json();if(d&&d.length){var m=L.map('map').setView([d[0].lat,d[0].lon],15);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(m);L.marker([d[0].lat,d[0].lon]).addTo(m).bindPopup('Catriel estilo korea').openPopup()}}catch(e){}})()
+</script>
 </body>
 </html>
