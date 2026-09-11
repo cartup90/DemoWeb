@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="40%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="grSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="grDarkBadge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Emblem Badge: Dynamic Aerodynamic Air Ring + GR Monogram -->
+  <g transform="translate(60, 60)">
+    <!-- Outer Glow Ring -->
+    <circle cx="0" cy="0" r="44" fill="url(#grDarkBadge)" stroke="url(#grCyan)" stroke-width="2.5"/>
+    
+    <!-- Dynamic Air Stream Vortex -->
+    <path d="M-32 -10 C-20 -36 20 -36 32 -10 C38 6 22 28 0 34" fill="none" stroke="url(#grCyan)" stroke-width="3" stroke-linecap="round" filter="url(#cyanGlow)" opacity="0.9"/>
+    <path d="M32 10 C20 36 -20 36 -32 10 C-38 -6 -22 -28 0 -34" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Geometric GR Symbol -->
+    <!-- G -->
+    <path d="M-6 -18 C-18 -18 -22 -8 -22 0 C-22 8 -18 18 -6 18 C-1 18 2 15 4 11 L-6 11 L-6 5 L10 5 L10 18 C6 22 -1 24 -7 24 C-22 24 -28 12 -28 0 C-28 -12 -22 -24 -7 -24 C0 -24 6 -22 10 -18 L5 -12 C2 -16 -1 -18 -6 -18 Z" fill="url(#grCyan)"/>
+    <!-- R -->
+    <path d="M12 -22 L24 -22 C30 -22 34 -18 34 -12 C34 -7 30 -3 25 -2 L35 22 L27 22 L18 1 L18 22 L12 22 Z M18 -16 L18 -5 L24 -5 C27 -5 28 -7 28 -10 C28 -14 27 -16 24 -16 Z" fill="url(#grSilver)"/>
+
+    <!-- Small Frost Sparkle -->
+    <polygon points="0,-44 3,-38 9,-38 4,-34 6,-28 0,-32 -6,-28 -4,-34 -9,-38 -3,-38" fill="url(#grCyan)"/>
+  </g>
+
+  <!-- Typography: AIRE ACONDICIONADO GR -->
+  <text x="126" y="52" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="33" letter-spacing="2" fill="#FFFFFF">
+    AIRE ACONDICIONADO <tspan fill="url(#grCyan)">GR</tspan>
+  </text>
+  
+  <!-- Subtitle: INSTALACIÓN & TIENDA OFICIAL -->
+  <text x="127" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12.5" letter-spacing="4" fill="url(#grCyan)">
+    INSTALACIÓN · SERVICE &amp; TIENDA
+  </text>
+
+  <!-- Location Tagline: RÍO CUARTO, CÓRDOBA -->
+  <text x="128" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="10" letter-spacing="2.5" fill="#94A3B8">
+    RÍO CUARTO · CALIFICACIÓN 4.9 ★ GOOGLE
+  </text>
+
+  <!-- Bottom Accent Bar -->
+  <rect x="128" y="104" width="220" height="2.5" rx="1.2" fill="url(#grCyan)" />
+</svg>
