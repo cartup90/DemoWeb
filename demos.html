@@ -302,6 +302,11 @@
       color: #fff;
     }
 
+    .tag-salud {
+      background: linear-gradient(135deg, #2dd4bf, #0d9488);
+      color: #04191a;
+    }
+
     .card-body {
       padding: 26px;
       flex-grow: 1;
@@ -434,6 +439,7 @@
       <!-- Filter buttons -->
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">Todas las Demos</button>
+        <button class="filter-btn" data-filter="salud">Salud & Profesionales</button>
         <button class="filter-btn" data-filter="servicios">Climatización & Servicios</button>
         <button class="filter-btn" data-filter="gastronomia">Gastronomía & Street Food</button>
       </div>
@@ -441,6 +447,35 @@
 
     <!-- Demos Grid -->
     <section class="demos-grid" id="demosGrid">
+
+      <!-- Demo: Odontólogo Dr. Alejandro Aguirre -->
+      <article class="demo-card featured" data-category="salud">
+        <div class="card-banner" style="background: linear-gradient(135deg, #04191d 0%, #0b3a3a 50%, #0d9488 100%);">
+          <span class="demo-tag tag-new">★ Nueva Demo</span>
+          <div class="banner-icon" style="color: #2dd4bf;">
+            <i class="fas fa-tooth"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-subtitle">Odontología · Urgencias & Implantes</div>
+            <h2 class="card-title">Dr. Alejandro Aguirre</h2>
+            <p class="card-desc">
+              Landing page para consultorio odontológico en el Macrocentro de Río Cuarto, enfocada en urgencias dentales, implantes y turnos coordinados por WhatsApp.
+            </p>
+            <ul class="card-features">
+              <li><i class="fas fa-check"></i> Generador de turnos online que arma el mensaje de WhatsApp</li>
+              <li><i class="fas fa-check"></i> Estado "abierto / cerrado ahora" con los horarios reales</li>
+              <li><i class="fas fa-check"></i> Secciones de urgencias, implantes paso a paso y FAQ</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <a href="dr-alejandro-aguirre-odontologia/index.html" class="btn btn-gold">
+              <i class="fas fa-external-link-alt"></i> Ver Demo en Vivo
+            </a>
+          </div>
+        </div>
+      </article>
       
       <!-- Demo 1: Técnicos GD -->
       <article class="demo-card featured" data-category="servicios">
