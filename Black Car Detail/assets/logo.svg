@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70" role="img" aria-label="Black Car Detail">
+  <defs>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5E7EB"/>
+      <stop offset="50%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#fff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Car icon -->
+  <g transform="translate(12, 12)">
+    <!-- Body -->
+    <path d="M8 22 L12 12 L48 12 L52 22 L58 22 L58 32 L6 32 Z" fill="#111" stroke="url(#metal)" stroke-width="2"/>
+    <!-- Windows -->
+    <path d="M14 14 L20 14 L24 20 L12 20 Z" fill="#1F2937"/>
+    <path d="M28 14 L42 14 L46 20 L24 20 Z" fill="#1F2937"/>
+    <!-- Wheels -->
+    <circle cx="14" cy="30" r="5" fill="#111" stroke="#6B7280" stroke-width="1.5"/>
+    <circle cx="48" cy="30" r="5" fill="#111" stroke="#6B7280" stroke-width="1.5"/>
+    <!-- Shine line -->
+    <path d="M10 16 L50 16" stroke="url(#shine)" stroke-width="2" stroke-opacity="0.6"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="78" y="32" font-family="Outfit, sans-serif" font-size="22" font-weight="800" fill="#E5E7EB" letter-spacing="-1">BLACK</text>
+  <text x="78" y="50" font-family="Outfit, sans-serif" font-size="17" font-weight="600" fill="#9CA3AF">CAR DETAIL</text>
+</svg>

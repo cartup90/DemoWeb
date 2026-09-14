@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Car Detail - Detailing premium de autos en Río Cuarto. Limpieza profesional, protección y brillo impecable. Cambio de aceite y servicios especializados.">
+  <title>Black Car Detail | Detailing Premium en Río Cuarto</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div><i class="fas fa-map-marker-alt"></i> Av. Marcelo T. de Alvear 1961 • Río Cuarto</div>
+      <div>
+        <a href="tel:+543584111473">0358 411-1473</a> &nbsp;&nbsp;
+        <a href="https://wa.me/5493584111473" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav">
+      <a href="#hero" class="logo">
+        <img src="assets/logo.svg" alt="Black Car Detail">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#antes-despues">Antes & Después</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/5493584111473?text=Hola%20Black%20Car%20Detail%2C%20quiero%20cotizar%20un%20detailing." 
+           class="btn btn-primary" target="_blank">
+          <i class="fab fa-whatsapp"></i> Cotizar Detailing
+        </a>
+        <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO - Very Vistoso -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <div style="display: inline-block; background: rgba(239,35,60,0.15); color: #EF233C; padding: 4px 14px; border-radius: 999px; font-size: 0.8rem; margin-bottom: 12px;">
+          <i class="fas fa-star"></i> 5.0 en Google
+        </div>
+        
+        <h1>Brillo extremo.<br>Detalle impecable.</h1>
+        <p class="lead">Transformamos tu auto en una obra de arte. Detailing profesional, protección cerámica y cambio de aceite con estándares de lujo en Río Cuarto.</p>
+        
+        <div class="hero-actions">
+          <a href="https://wa.me/5493584111473?text=Hola%20Black%20Car%20Detail%2C%20quiero%20reservar%20un%20turno." 
+             class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Reservar Turno
+          </a>
+          <a href="#antes-despues" class="btn btn-outline">Ver resultados</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">5.0</div>
+            <div class="stat-label">Calificación Google</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">350+</div>
+            <div class="stat-label">Autos transformados</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Clientes satisfechos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Servicios de nivel premium</h2>
+        <p>Cada detalle cuenta. Elegí el paquete que tu auto necesita.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+          <i class="fas fa-car"></i>
+          <h3>Detailing Exterior</h3>
+          <p>Lavado profundo, pulido, cerámica y protección. Tu auto vuelve a brillar como nuevo.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+          <i class="fas fa-chair"></i>
+          <h3>Detailing Interior</h3>
+          <p>Limpieza profunda de tapizados, cuero, plásticos y techos. Eliminamos olores y manchas.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+          <i class="fas fa-oil-can"></i>
+          <h3>Cambio de Aceite</h3>
+          <p>Servicio profesional con aceites premium y filtros originales. Incluye revisión.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="240">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Protección Cerámica</h3>
+          <p>Recubrimiento de larga duración que protege la pintura y facilita la limpieza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES Y DESPUÉS - Interactive Slider -->
+  <section class="section" id="antes-despues">
+    <div class="container">
+      <div class="section-title">
+        <h2>El poder del detalle</h2>
+        <p>Deslizá para ver la transformación real.</p>
+      </div>
+
+      <div class="before-after">
+        <div class="before-after-container" id="slider">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200" alt="Antes" class="after-img">
+          <img src="https://images.unsplash.com/photo-1618843479313-40f8c8f1a4e1?w=1200" alt="Después" class="before-img" id="beforeImg">
+          <div class="slider-handle" id="sliderHandle">
+            <i class="fas fa-arrows-alt-h" style="color:#111; font-size:14px;"></i>
+          </div>
+        </div>
+        <div style="padding: 12px 20px; text-align: center; background: #111318; font-size: 0.85rem; color: #9CA3AF;">
+          <strong>Exterior completo</strong> — Antes vs Después de un detailing premium
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trabajos destacados</h2>
+      </div>
+
+      <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="gallery-slide">
+              <img src="https://images.unsplash.com/photo-1618843479313-40f8c8f1a4e1?w=800" alt="Auto negro brillante">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slide">
+              <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800" alt="Interior limpio">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slide">
+              <img src="https://images.unsplash.com/photo-1609520761760-9b6a6a7a7c1d?w=800" alt="Motor limpio">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-slide">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="Auto detallado">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestro proceso de detalle</h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step" data-aos="fade-up">
+          <div class="number">01</div>
+          <h4>Inspección</h4>
+          <p>Evaluamos el estado real del vehículo y definimos el tratamiento ideal.</p>
+        </div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="80">
+          <div class="number">02</div>
+          <h4>Preparación</h4>
+          <p>Lavado profundo, descontaminación y preparación de superficies.</p>
+        </div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="160">
+          <div class="number">03</div>
+          <h4>Corrección</h4>
+          <p>Pulido profesional para eliminar rayones y restaurar el brillo original.</p>
+        </div>
+        <div class="process-step" data-aos="fade-up" data-aos-delay="240">
+          <div class="number">04</div>
+          <h4>Protección</h4>
+          <p>Aplicación de cerámica o selladores de alta duración.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section" style="background: #111318;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+
+      <div class="swiper testimonial-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>“El detailing que me hicieron al auto fue impresionante. Parecía recién salido de fábrica. Muy profesionales y el resultado superó mis expectativas.”</p>
+              <div class="author">— Nicolás R., BMW Serie 3</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>“Hice cambio de aceite + detailing completo. El auto quedó impecable por dentro y por fuera. Volveré sin dudas.”</p>
+              <div class="author">— Laura M., Toyota Corolla</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>“Excelente atención y calidad. Aplicaron cerámica y el brillo se mantiene después de varias semanas. Recomendadísimo.”</p>
+              <div class="author">— Martín G., Audi A4</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="section" id="ubicacion">
+    <div class="container">
+      <div class="section-title">
+        <h2>Visitanos en Av. Alvear</h2>
+      </div>
+
+      <div class="location-grid">
+        <div>
+          <h3 style="margin-bottom: 12px;">Black Car Detail</h3>
+          <p><strong>Av. Marcelo T. de Alvear 1961</strong><br>X5804 Río Cuarto, Córdoba</p>
+          
+          <p style="margin-top: 20px;">
+            <a href="tel:+543584111473">0358 411-1473</a><br>
+            <a href="https://wa.me/5493584111473" target="_blank">+54 9 358 411-1473</a>
+          </p>
+
+          <a href="https://wa.me/5493584111473?text=Hola%20Black%20Car%20Detail%2C%20quiero%20cotizar%20un%20detailing." 
+             class="btn btn-primary" target="_blank" style="margin-top: 16px;">
+            Solicitar Cotización
+          </a>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps?q=-33.0935273,-64.3237885&hl=es&z=17&output=embed" 
+            loading="lazy" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>¿Listo para que tu auto brille como nunca?</h2>
+      <p>Escribinos y agendamos tu turno. Transformación garantizada.</p>
+      <a href="https://wa.me/5493584111473?text=Hola%20Black%20Car%20Detail%2C%20quiero%20reservar%20un%20turno." 
+         class="btn btn-silver" target="_blank">
+        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo.svg" alt="Black Car Detail" style="height: 38px; margin-bottom: 10px; filter: brightness(0) invert(0.9);">
+        <p>Detalle profesional de vehículos en Río Cuarto.</p>
+      </div>
+      <div>
+        <strong>Servicios</strong><br><br>
+        <a href="#servicios">Detailing Exterior</a><br>
+        <a href="#servicios">Detailing Interior</a><br>
+        <a href="#servicios">Protección Cerámica</a>
+      </div>
+      <div>
+        <strong>Contacto</strong><br><br>
+        <a href="https://wa.me/5493584111473" target="_blank">+54 9 358 411-1473</a><br>
+        Av. Alvear 1961<br>
+        Río Cuarto
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WA -->
+  <a href="https://wa.me/5493584111473?text=Hola%20Black%20Car%20Detail%2C%20quiero%20informaci%C3%B3n." 
+     class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
