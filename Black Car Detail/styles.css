@@ -164,9 +164,9 @@ h1, h2, h3 {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1618843479313-40f8c8f1a4e1?w=1600&q=80');
+  background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80');
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   background-attachment: fixed;
   z-index: -1;
 }
