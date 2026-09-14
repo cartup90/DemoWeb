@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Viandas Como en Casa - Comida casera a domicilio en Río Cuarto. Menús semanales, viandas diarias y planes personalizados.">
+  <title>Viandas Como en Casa | Comida Casera a Domicilio en Río Cuarto</title>
+
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div><i class="fas fa-map-marker-alt"></i> Río Segundo 1212, Río Cuarto</div>
+      <div>
+        <a href="tel:+543584010083">0358 401-0083</a> &nbsp; 
+        <a href="https://wa.me/5493584010083" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav">
+      <a href="#hero" class="logo">
+        <img src="assets/logo.png" alt="Viandas Como en Casa">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu">Nuestro Menú</a></li>
+        <li><a href="#plan">Armá tu Plan</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#proceso">Cómo Funciona</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20hacer%20un%20pedido." 
+           class="btn btn-accent" target="_blank">
+          <i class="fab fa-whatsapp"></i> Hacer Pedido
+        </a>
+        <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Comida como la<br>de mamá, en tu casa.</h1>
+        <p class="lead">Viandas caseras preparadas con amor. Menús semanales, diarias y planes para toda la familia en Río Cuarto.</p>
+        
+        <div class="hero-actions">
+          <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20ver%20el%20men%C3%BA%20de%20esta%20semana." 
+             class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Ver Menú de esta Semana
+          </a>
+          <a href="#plan" class="btn btn-outline">Armar mi plan</a>
+        </div>
+
+        <div class="stats">
+          <div><span class="stat-number">650+</span><br>viandas entregadas</div>
+          <div><span class="stat-number">4.7</span><br>en Google</div>
+          <div><span class="stat-number">3</span><br>años de confianza</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Comida casera que cuida de vos</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up">
+          <i class="fas fa-calendar-week"></i>
+          <h3>Planes Semanales</h3>
+          <p>5 o 7 viandas por semana. Elegí entre clásicas, vegetarianas o light.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+          <i class="fas fa-truck"></i>
+          <h3>Entrega a Domicilio</h3>
+          <p>Llevamos tus viandas frescas hasta la puerta de tu casa en Río Cuarto.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+          <i class="fas fa-heart"></i>
+          <h3>Comida Real</h3>
+          <p>Ingredientes de calidad, sin ultraprocesados. Como si lo hubieras cocinado vos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ INTERACTIVO -->
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-title">
+        <h2>Menú de Viandas</h2>
+        <p>Elegí las que más te gusten. Filtrá por categoría.</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="clasica">Clásicas</button>
+        <button class="filter-btn" data-filter="vegetariana">Vegetarianas</button>
+        <button class="filter-btn" data-filter="light">Light</button>
+        <button class="filter-btn" data-filter="familiar">Familiares</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- JS will populate or we hardcode some -->
+        <div class="menu-item" data-category="clasica">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Milanesa con puré">
+          <div class="menu-item-content">
+            <h4>Milanesa al horno + Puré</h4>
+            <p>Clásico reconfortante</p>
+            <div class="price">$2.890</div>
+            <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20Milanesa%20al%20horno%20%2B%20Puré" 
+               class="btn btn-primary" target="_blank">Pedir esta vianda</a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="vegetariana">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Ensalada de quinoa">
+          <div class="menu-item-content">
+            <h4>Ensalada de Quinoa y Verduras</h4>
+            <p>Vegetariana y fresca</p>
+            <div class="price">$2.650</div>
+            <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20la%20Ensalada%20de%20Quinoa" 
+               class="btn btn-primary" target="_blank">Pedir esta vianda</a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="light">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Pollo al limón">
+          <div class="menu-item-content">
+            <h4>Pollo al Limón con Verduras</h4>
+            <p>Opción ligera y saludable</p>
+            <div class="price">$2.790</div>
+            <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20Pollo%20al%20lim%C3%B3n" 
+               class="btn btn-primary" target="_blank">Pedir esta vianda</a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="familiar">
+          <img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600" alt="Tarta de jamón y queso">
+          <div class="menu-item-content">
+            <h4>Tarta de Jamón y Queso (porción familiar)</h4>
+            <p>Ideal para 4 personas</p>
+            <div class="price">$8.900</div>
+            <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20Tarta%20familiar" 
+               class="btn btn-primary" target="_blank">Pedir esta vianda</a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="clasica">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Guiso de lentejas">
+          <div class="menu-item-content">
+            <h4>Guiso de Lentejas Casero</h4>
+            <p>Tradicional y abundante</p>
+            <div class="price">$2.550</div>
+            <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20Guiso%20de%20Lentejas" 
+               class="btn btn-primary" target="_blank">Pedir esta vianda</a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="vegetariana">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Berenjenas al horno">
+          <div class="menu-item-content">
+            <h4>Berenjenas Rellenas al Horno</h4>
+            <p>Vegetariana y sabrosa</p>
+            <div class="price">$2.720</div>
+            <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20Berenjenas%20Rellenas" 
+               class="btn btn-primary" target="_blank">Pedir esta vianda</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN INTERACTIVO -->
+  <section class="section" id="plan">
+    <div class="container">
+      <div class="section-title">
+        <h2>Armá tu plan semanal</h2>
+        <p>Calculá rápido cuántas viandas necesitás y el precio aproximado.</p>
+      </div>
+
+      <div class="planner" data-aos="fade-up">
+        <div class="planner-grid">
+          <div class="planner-controls">
+            <label>Tipo de plan</label>
+            <select id="planType">
+              <option value="5">Plan 5 días (Lun-Vie)</option>
+              <option value="7">Plan 7 días (completo)</option>
+            </select>
+
+            <label>Cantidad de personas</label>
+            <select id="people">
+              <option value="1">1 persona</option>
+              <option value="2">2 personas</option>
+              <option value="3">3 personas</option>
+              <option value="4">4 personas</option>
+            </select>
+
+            <label>Tipo de viandas</label>
+            <select id="mealType">
+              <option value="clasica">Clásicas</option>
+              <option value="vegetariana">Vegetarianas</option>
+              <option value="light">Light</option>
+              <option value="mixto">Mixto</option>
+            </select>
+          </div>
+
+          <div class="result-box">
+            <div>
+              <strong>Tu pedido aproximado:</strong>
+              <div class="price" id="totalPrice">$14.450</div>
+              <div class="detail" id="planDetail">5 viandas clásicas para 1 persona</div>
+            </div>
+            <button class="btn btn-accent" id="sendPlan">Enviar pedido por WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section" style="background: #FFF0E0;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+
+      <div class="swiper testimonial-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>“Las viandas son riquísimas y se nota que están hechas con cariño. Mi familia ya no quiere comer otra cosa.”</p>
+              <div class="author">— Valeria M., cliente desde 2024</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial">
+              <p>“Me cambió la vida. Trabajo todo el día y llego a casa con la cena lista. Todo casero y rico.”</p>
+              <div class="author">— Juan P., Plan Semanal</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-title">
+        <h2>Así llegan nuestras viandas</h2>
+      </div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Vianda lista">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Ensalada">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Guiso">
+        <img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600" alt="Tarta">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Comida casera">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-title">
+        <h2>Cómo funciona</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>1. Elegís</h3>
+          <p>Seleccionás tu plan o viandas individuales por WhatsApp.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-utensils"></i>
+          <h3>2. Preparamos</h3>
+          <p>Cocinamos con ingredientes frescos el mismo día o el anterior.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-truck"></i>
+          <h3>3. Entregamos</h3>
+          <p>Te llevamos las viandas en envases listos para calentar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="section" id="ubicacion">
+    <div class="container">
+      <div class="section-title">
+        <h2>Estamos en Río Cuarto</h2>
+      </div>
+
+      <div class="location-grid">
+        <div>
+          <h3>Viandas Como en Casa</h3>
+          <p><strong>Río Segundo 1212</strong><br>X5806 Río Cuarto, Córdoba</p>
+          <p style="margin-top: 18px;">
+            <a href="tel:+543584010083">0358 401-0083</a><br>
+            <a href="https://wa.me/5493584010083" target="_blank">+54 9 358 401-0083</a>
+          </p>
+          <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20hacer%20un%20pedido." 
+             class="btn btn-primary" target="_blank" style="margin-top: 16px;">Hacer Pedido por WhatsApp</a>
+        </div>
+
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps?q=-33.1072708,-64.3571742&hl=es&z=17&output=embed" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>¿Listo para comer como en casa?</h2>
+      <p>Escribinos y empezamos con tu primer pedido esta semana.</p>
+      <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20comenzar%20mi%20plan%20de%20viandas." 
+         class="btn btn-accent" target="_blank">Escribir por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Viandas Como en Casa" style="height: 38px; margin-bottom: 10px;">
+        <p>Viandas caseras con el sabor de siempre.</p>
+      </div>
+      <div>
+        <strong>Menú</strong><br><br>
+        <a href="#menu">Viandas del día</a><br>
+        <a href="#plan">Armá tu plan</a>
+      </div>
+      <div>
+        <strong>Contacto</strong><br><br>
+        <a href="https://wa.me/5493584010083" target="_blank">+54 9 358 401-0083</a><br>
+        Río Segundo 1212<br>
+        Río Cuarto
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5493584010083?text=Hola%20Viandas%20Como%20en%20Casa%2C%20quiero%20informaci%C3%B3n." 
+     class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
